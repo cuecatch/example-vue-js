@@ -9,7 +9,7 @@ module.exports = defineConfig({
         ...options,
         compilerOptions: {
           // treat any tag that starts with ion- as custom elements
-          isCustomElement: tag => tag.startsWith('survey-')
+          isCustomElement: tag => tag.startsWith('cue-')
         }
       }))
  }})

@@ -14,7 +14,7 @@
         <button @click="goNext()"> &#8594; Next</button>
       </div>
       <div class="survey-container">
-        <survey-compo ref="surveycompo" cache="memory" :src="surveySource" />
+        <cue-catch ref="cuecatch" cache="memory" :src="surveySource" />
       </div>
     </div>
   </div>
@@ -23,15 +23,15 @@
 <script>
 import {exampleJSON} from './example'
 const surveys = {
-  survey1: 'https://raw.githubusercontent.com/SurveyCompo/examples/main/examples/inputs/source.json',
-  survey2: 'https://raw.githubusercontent.com/SurveyCompo/examples/main/examples/style/source.json',
+  survey1: 'https://raw.githubusercontent.com/cuecatch/examples/main/examples/inputs/source.json',
+  survey2: 'https://raw.githubusercontent.com/cuecatch/examples/main/examples/style/source.json',
   local: JSON.stringify(exampleJSON),
 };
 export default {
   name: 'SurveyExample',
   data() {
     return {
-      surveySource: 'https://raw.githubusercontent.com/SurveyCompo/examples/main/examples/basic/source.json',
+      surveySource: 'https://raw.githubusercontent.com/cuecatch/examples/main/examples/basic/source.json',
       memory: true
     }
   },
@@ -43,16 +43,16 @@ export default {
       this.surveySource = JSON.stringify(exampleJSON);
     },
     setLocalSurveyByProp() {
-      this.$refs.surveycompo.src = exampleJSON;
+      this.$refs.cuecatch.src = exampleJSON;
     },
     reset() {
-      this.$refs.surveycompo.api.reset();
+      this.$refs.cuecatch.api.reset();
     },
     goNext() {
-      this.$refs.surveycompo.api.goNext();
+      this.$refs.cuecatch.api.goNext();
     },
     goPrev() {
-      this.$refs.surveycompo.api.goPrev();
+      this.$refs.cuecatch.api.goPrev();
     },
   }
 }
